@@ -11,8 +11,9 @@ public class ProjetoLogica {
         String nomeArquivo = "Entrada.in";
         FileWriter arquivo = new FileWriter("Saida.in");
         PrintWriter gravarArquivo = new PrintWriter(arquivo);
+        FileReader abrirArquivo = null;
         try {
-            FileReader abrirArquivo = new FileReader(nomeArquivo);
+            abrirArquivo = new FileReader(nomeArquivo);
             BufferedReader lerArquivo = new BufferedReader(abrirArquivo);
             try {
                 String linha = lerArquivo.readLine();
@@ -29,6 +30,7 @@ public class ProjetoLogica {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+        abrirArquivo.close();
         System.out.println();
         String expressao = "";
         int indexValoracao = 0;
