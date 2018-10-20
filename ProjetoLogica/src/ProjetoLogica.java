@@ -104,18 +104,18 @@ public class ProjetoLogica {
                     if(conjuntoSatisfativel)
                     {
                         gravarArquivo.printf("Problema #%d\n",i+1);
-                        gravarArquivo.println("A valoracao-verdade satisfaz o conjunto.\n");
+                        gravarArquivo.println("A valoracao-verdade satisfaz o conjunto.");
                     }
                     else
                     {
                         gravarArquivo.printf("Problema #%d\n",i+1);
-                        gravarArquivo.println("A valoracao-verdade nao satisfaz o conjunto.\n");
+                        gravarArquivo.println("A valoracao-verdade nao satisfaz o conjunto.");
                     }
                 }
                 else
                 {
                     gravarArquivo.printf("Problema #%d\n",i+1);
-                    gravarArquivo.println("Ha uma palavra nao legitima no conjunto.\n");
+                    gravarArquivo.println("Ha uma palavra nao legitima no conjunto.");
                 }
             }
             else
@@ -127,22 +127,27 @@ public class ProjetoLogica {
                     if(satisfativel(variaveis, expressao))
                     {
                         gravarArquivo.printf("Problema #%d\n",i+1);
-                        gravarArquivo.println("A valoracao-verdade satisfaz a proposicao.\n");
+                        gravarArquivo.println("A valoracao-verdade satisfaz a proposicao.");
                     }
                     else
                     {
                         gravarArquivo.printf("Problema #%d\n",i+1);
-                        gravarArquivo.println("A valoracao-verdade nao satisfaz a proposicao.\n");
+                        gravarArquivo.println("A valoracao-verdade nao satisfaz a proposicao.");
                     }
 
                 }
                 else
                 {
                     gravarArquivo.printf("Problema #%d\n",i+1);
-                    gravarArquivo.println("A palavra nao e legitima.\n");
+                    gravarArquivo.println("A palavra nao e legitima.");
                 }
             }
+            if(i < quantExpr-1)
+            {
+                gravarArquivo.println();
+            }
         }
+        arquivo.close();
     }
     //----------------------------------------------------------------------------------------------
     public static boolean valida(String expressao)
